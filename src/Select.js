@@ -84,6 +84,7 @@ const Select = React.createClass({
 		valueKey: React.PropTypes.string,           // path of the label value in option objects
 		valueRenderer: React.PropTypes.func,        // valueRenderer: function (option) {}
 		wrapperStyle: React.PropTypes.object,       // optional style to apply to the component wrapper
+        inputValue: React.PropTypes.string,
 	},
 
 	getDefaultProps () {
@@ -116,12 +117,13 @@ const Select = React.createClass({
 			simpleValue: false,
 			valueComponent: Value,
 			valueKey: 'value',
+            inputValue: '',
 		};
 	},
 
 	getInitialState () {
 		return {
-			inputValue: '',
+			inputValue: this.props.inputValue,
 			isFocused: false,
 			isLoading: false,
 			isOpen: false,
